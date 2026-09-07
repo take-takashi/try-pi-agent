@@ -1,0 +1,11 @@
+{
+  "npmCommand": [
+    "mise",
+    "exec",
+    "--",
+    "npm"
+  ],
+  "packages": [
+    "npm:pi-sandbox@0.6.5"
+  ]
+}

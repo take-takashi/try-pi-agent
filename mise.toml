@@ -1,0 +1,4 @@
+[tools]
+node = "24.20.0"
+"npm:@earendil-works/pi-coding-agent" = "0.84.4"
+ripgrep = "15.2.0"
