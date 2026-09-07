@@ -34,3 +34,28 @@ macOS または Linux では `rg`（ripgrep）が必要です。このPJでは `
 ```sh
 brew install ripgrep
 ```
+
+## WorktreeセッションExtension
+
+`.pi/extensions/worktree-session.ts` に、実験用のExtensionを置いています。
+
+できること：
+
+- `/worktree <目的>`：目的をLLMに渡し、Conventional Branch形式の名前を生成してworktreeを作成します。
+- 作成したworktreeへ、会話履歴を引き継いだままPiセッションを切り替えます。
+- `create_worktree`：LLMから呼び出せるworktree作成ツールです。
+- フッターに現在のworktree名とbranch名を表示します。
+
+`<目的>`は自然言語で書けます。例えば：
+
+```text
+/worktree パスキーログインを作る
+```
+
+LLMが`feat/auth-add-passkey-login`のようなbranch名を考え、確認後に作成・切り替えます。
+
+最初の動作確認では、作成したworktree側でもExtensionを使えるよう、明示的に読み込みます：
+
+```sh
+mise exec -- pi --approve --no-extensions -e ./.pi/extensions/worktree-session.ts
+```
