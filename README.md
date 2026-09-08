@@ -8,7 +8,7 @@ Pi agentを使ってみる試みです。
 
 ```sh
 mise install
-mise exec -- pi
+pi
 ```
 
 `.pi/settings.json` にプロジェクト用の sandbox extension を登録しています。初回起動時に、Pi が `.pi/npm/` へ extension の依存パッケージをインストールします。
@@ -26,7 +26,7 @@ echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
 プロジェクトの設定は `.pi/sandbox.json` です。sandbox を一時的に無効にする場合は、次を使います。
 
 ```sh
-mise exec -- pi --no-sandbox
+pi --no-sandbox
 ```
 
 macOS または Linux では `rg`（ripgrep）が必要です。このPJでは `mise install` が `rg` も導入します。`mise` の外で使う場合は、macOS では次のコマンドでも導入できます。
@@ -57,5 +57,5 @@ LLMが`feat/auth-add-passkey-login`のようなbranch名を考え、確認後に
 最初の動作確認では、作成したworktree側でもExtensionを使えるよう、明示的に読み込みます：
 
 ```sh
-mise exec -- pi --approve --no-extensions -e ./.pi/extensions/worktree-session.ts
+pi --approve --no-extensions -e ./.pi/extensions/worktree-session.ts
 ```
