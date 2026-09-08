@@ -13,6 +13,13 @@
     "deniedDomains": []
   },
   "filesystem": {
+    "allowRead": [
+      ".",
+      "~/.config",
+      "~/.local",
+      "Library",
+      "~/Library/Keychains"
+    ],
     "allowWrite": [
       ".",
       "/tmp"
